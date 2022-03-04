@@ -29,7 +29,7 @@ public class AutorController {
     public ResponseEntity<Object> pronadiPoId(@PathVariable("idBroj") Long id)
     {
         Optional<Autor> pronadeniAutor = autorService.pronadiPoId(id);
-        return new ResponseEntity<Object>(pronadeniAutor, HttpStatus.OK);
+        return new ResponseEntity<>(pronadeniAutor, HttpStatus.OK);
     }
 
     @PostMapping("/dodaj")
