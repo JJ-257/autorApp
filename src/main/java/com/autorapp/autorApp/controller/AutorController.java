@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/autori")
+@RequestMapping({"/user/autori", "/admin/autori"})
 public class AutorController {
 
     private final AutorService autorService;
