@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping({"/user/autori", "/admin/autori"})
+@RequestMapping({"/autori", "user/autori", "admin/autori"})
 public class AutorController {
 
     private final AutorService autorService;
@@ -50,12 +50,13 @@ public class AutorController {
 
 
 
-    @DeleteMapping("/izbrisi/{idBroj}")
+    @DeleteMapping("/user/izbrisi/{idBroj}")
     public ResponseEntity<?> izbrisiAutoraPoId(@PathVariable("idBroj") Long idBroj)
     {
         autorService.izbrisiAutora(idBroj);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 
 
 }
