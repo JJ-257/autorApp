@@ -50,7 +50,7 @@ public class AutorController {
 
 
 
-    @DeleteMapping("/user/izbrisi/{idBroj}")
+    @DeleteMapping("/izbrisi/{idBroj}")
     public ResponseEntity<?> izbrisiAutoraPoId(@PathVariable("idBroj") Long idBroj)
     {
         autorService.izbrisiAutora(idBroj);

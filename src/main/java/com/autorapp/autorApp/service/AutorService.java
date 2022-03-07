@@ -28,9 +28,20 @@ public class AutorService {
         return autorRepo.findAll();
     }
 
-    public Autor promjeniAutora (Autor autor)
+   /* public Autor promjeniAutora (Autor autor)
     {
         return autorRepo.save(autor);
+    }*/
+
+    public Autor promjeniAutora (Autor autor)
+    {
+        Long id = autor.getId();
+        Autor a = autorRepo.findById(id).get();
+        a.setIme(autor.getIme());
+        a.setPrezime(autor.getPrezime());
+        a.setNazivKnjige(autor.getNazivKnjige());
+        return autorRepo.save(a);
+
     }
 
     public void izbrisiAutora(Long idBroj)
